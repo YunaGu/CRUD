@@ -46,22 +46,22 @@ function App() {
     <div className="whole">
       <div className="information">
         <label>Name:</label>
-        <input type="text" onChange={(event)=>{setName(event.target.value)}}></input>
+        <input type="text" placeholder="Name (e.g. Joe John)" onChange={(event)=>{setName(event.target.value)}}></input>
         <label>Age:</label>
-        <input type="number" onChange={(event)=>{setAge(event.target.value)}}></input>
+        <input type="number" placeholder="Age (e.g. 22)" onChange={(event)=>{setAge(event.target.value)}}></input>
         <label>Country:</label>
-        <input type="text" onChange={(event)=>{setCountry(event.target.value)}}></input>
+        <input type="text" placeholder="Country (e.g. UK)" onChange={(event)=>{setCountry(event.target.value)}}></input>
         <label>Position:</label>
-        <input type="text" onChange={(event)=>{setPosition(event.target.value)}}></input>
-        <label>Wage(k/year):</label>
-        <input type="number" onChange={(event)=>{setWage(event.target.value)}}></input>
-        <button type="button" onClick={addEmployee}>Add Employee</button>
+        <input type="text" placeholder="Postion (e.g. UX Designer)" onChange={(event)=>{setPosition(event.target.value)}}></input>
+        <label>Wage(year):</label>
+        <input type="number" placeholder="Wage (e.g. £100000)" onChange={(event)=>{setWage(event.target.value)}}></input>
+        <button type="button" className="bigBtn" onClick={addEmployee}>Add Employee</button>
       </div>
 
       <hr/>
 
       <div className="employees">
-        <button type="button" onClick={getEmployees}>Show Employees</button>
+        <button type="button" className="bigBtn" onClick={getEmployees}>Show Employees</button>
         {employeeList.map((val, key)=>{
           return <div className="employee">
             <h3 className="detail">Name: {val.name}</h3>
@@ -69,6 +69,8 @@ function App() {
             <h3 className="detail">Country: {val.country}</h3>
             <h3 className="detail">Position: {val.position}</h3>
             <h3 className="detail">Wage(k/year): {val.wage}</h3>
+            <input type="text" placeholder="update wage" className="update"></input>
+            <button type="button" className="smBtn">Delete</button>
             </div>
         })}
       </div>
