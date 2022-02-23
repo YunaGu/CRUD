@@ -1,6 +1,6 @@
 import './App.css';
 import {useState} from 'react'
-
+import Axios from 'axios'
 
 function App() {
 
@@ -10,8 +10,19 @@ function App() {
   const [position, setPosition] = useState('')
   const [wage, setWage] = useState(0)
 
-  const displayInfo = ()=>{
-    console.log(name + age + country + position + wage);
+  // const displayInfo = ()=>{
+  //   console.log(name + age + country + position + wage);
+  // }
+
+  const addEmployee = ()=>{
+    Axios.post('http://localhost:3001/create',{
+      name: name, 
+      age: age, 
+      country: country, 
+      position: position, 
+      wage: wage}).then(()=>{
+        console.log("success")
+      })
   }
 
   return (
@@ -26,7 +37,7 @@ function App() {
     <input type="text" onChange={(event)=>{setPosition(event.target.value)}}></input>
     <label>Wage(year):</label>
     <input type="number" onChange={(event)=>{setWage(event.target.value)}}></input>
-    <button type="button" onClick={displayInfo}>Add Employee</button>
+    <button type="button" onClick={addEmployee}>Add Employee</button>
     </div>
   );
 }
