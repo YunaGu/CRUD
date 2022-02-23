@@ -53,6 +53,14 @@ function App() {
     )
   }
 
+  const deleteEmployee = (id) =>{
+    Axios.delete(`http://localhost:3001/delete/${id}`).then((response)=>{
+      setEmployeeList(employeeList.filter((val)=>{
+        return val.id !== id;
+      }))
+    })
+  }
+
   return (
     <div className="whole">
       <div className="information">
@@ -85,7 +93,7 @@ function App() {
               <div className="e-right">
                 <input type="text" placeholder="update wage" className="update" onChange={(event)=>{setNewWage(event.target.value)}}></input>
                 <button type="button" className="smBtn" onClick={()=>updateEmployeeWage(val.id)}>Update</button>
-                <button type="button" className="smBtn">Delete</button>
+                <button type="button" className="smBtn" onClick={()=>deleteEmployee(val.id)}>Delete</button>
               </div>
             </div>
         })}
