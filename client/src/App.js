@@ -23,12 +23,21 @@ function App() {
       position: position, 
       wage: wage}).then(()=>{
         console.log("success")
+      }).then(()=>{
+        setEmployeeList([...employeeList,
+          {
+          name: name, 
+          age: age, 
+          country: country, 
+          position: position, 
+          wage: wage
+          }])
       })
   }
 
   const getEmployees = ()=>{
     Axios.get('http://localhost:3001/employees').then((response)=>{
-      // console.log(response)
+      console.log(response)
       setEmployeeList(response.data)
     })
   }
