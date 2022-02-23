@@ -51,16 +51,31 @@ hr {
   height: auto;
 }
 
+.e-left {
+  flex: 2;
+}
+
+.e-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  padding-right: 20px;
+}
+
 .detail {
   margin: 15px;
   font-family: "Courier New", Courier, monospace;
 }
 
 .employee input {
-  width: 10%;
+  width: 80%;
+  padding-left: 10px;
   margin: 10px;
 }
 
 .smBtn {
+  width: 80%;
   margin: 10px;
 }

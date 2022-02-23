@@ -64,13 +64,18 @@ function App() {
         <button type="button" className="bigBtn" onClick={getEmployees}>Show Employees</button>
         {employeeList.map((val, key)=>{
           return <div className="employee">
-            <h3 className="detail">Name: {val.name}</h3>
-            <h3 className="detail">Age: {val.age}</h3>
-            <h3 className="detail">Country: {val.country}</h3>
-            <h3 className="detail">Position: {val.position}</h3>
-            <h3 className="detail">Wage(k/year): {val.wage}</h3>
-            <input type="text" placeholder="update wage" className="update"></input>
-            <button type="button" className="smBtn">Delete</button>
+            <div className="e-left">
+              <h3 className="detail">Name: {val.name}</h3>
+              <h3 className="detail">Age: {val.age}</h3>
+              <h3 className="detail">Country: {val.country}</h3>
+              <h3 className="detail">Position: {val.position}</h3>
+              <h3 className="detail">Wage(k/year): {val.wage}</h3>
+            </div>
+            <div className="e-right">
+              <input type="text" placeholder="update wage" className="update"></input>
+              <button type="button" className="smBtn">Update</button>
+              <button type="button" className="smBtn">Delete</button>
+            </div>
             </div>
         })}
       </div>
