@@ -1,3 +1,10 @@
+.whole {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .information {
   display: flex;
   flex-direction: column;
@@ -11,8 +18,40 @@
   margin: 10px;
 }
 
-.information button {
+button {
   width: 300px;
   height: 50px;
   margin-top: 15px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+hr {
+  height: 10px;
+  width: 100%;
+  background-color: #000;
+}
+
+.employees {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid #000; */
+}
+
+.employee {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #000;
+  margin-top: 15px;
+  width: 100%;
+  height: auto;
+}
+
+.detail {
+  margin: 15px;
+  font-family: "Courier New", Courier, monospace;
 }
