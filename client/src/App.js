@@ -9,6 +9,7 @@ function App() {
   const [country, setCountry] = useState('')
   const [position, setPosition] = useState('')
   const [wage, setWage] = useState(0)
+  const [newWage, setNewWage] = useState(0)
 
   const [employeeList, setEmployeeList] = useState([])
   // const displayInfo = ()=>{
@@ -37,9 +38,19 @@ function App() {
 
   const getEmployees = ()=>{
     Axios.get('http://localhost:3001/employees').then((response)=>{
-      console.log(response)
+      // console.log(response)
       setEmployeeList(response.data)
     })
+  }
+
+  const updateEmployeeWage = (id)=>{
+    Axios.put('http://localhost:3001/update', {wage: newWage,id: id}).then(
+      (response)=>{
+        setEmployeeList(employeeList.map((val) =>{
+          return val.id === id?{id:val.id, name:val.name, age:val.age, country:val.country, position:val.position, wage:newWage}:val
+        })
+        )}
+    )
   }
 
   return (
@@ -64,18 +75,18 @@ function App() {
         <button type="button" className="bigBtn" onClick={getEmployees}>Show Employees</button>
         {employeeList.map((val, key)=>{
           return <div className="employee">
-            <div className="e-left">
-              <h3 className="detail">Name: {val.name}</h3>
-              <h3 className="detail">Age: {val.age}</h3>
-              <h3 className="detail">Country: {val.country}</h3>
-              <h3 className="detail">Position: {val.position}</h3>
-              <h3 className="detail">Wage(k/year): {val.wage}</h3>
-            </div>
-            <div className="e-right">
-              <input type="text" placeholder="update wage" className="update"></input>
-              <button type="button" className="smBtn">Update</button>
-              <button type="button" className="smBtn">Delete</button>
-            </div>
+              <div className="e-left">
+                <h3 className="detail">Name: {val.name}</h3>
+                <h3 className="detail">Age: {val.age}</h3>
+                <h3 className="detail">Country: {val.country}</h3>
+                <h3 className="detail">Position: {val.position}</h3>
+                <h3 className="detail">Wage(k/year): {val.wage}</h3>
+              </div>
+              <div className="e-right">
+                <input type="text" placeholder="update wage" className="update" onChange={(event)=>{setNewWage(event.target.value)}}></input>
+                <button type="button" className="smBtn" onClick={()=>updateEmployeeWage(val.id)}>Update</button>
+                <button type="button" className="smBtn">Delete</button>
+              </div>
             </div>
         })}
       </div>
