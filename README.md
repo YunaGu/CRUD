@@ -14,12 +14,12 @@ Github: [https://github.com/YunaGu/CRUD](https://github.com/YunaGu/CRUD)
 
 1. Add employee
 
-   ![add_AdobeCreativeCloudExpress.gif](CRUD%20d64b6/add_AdobeCreativeCloudExpress.gif)
+   ![add_AdobeCreativeCloudExpress.gif](./add_AdobeCreativeCloudExpress.gif)
 
 2. Update wage
 
-   ![update_AdobeCreativeCloudExpress.gif](CRUD%20d64b6/update_AdobeCreativeCloudExpress.gif)
+   ![update_AdobeCreativeCloudExpress.gif](./update_AdobeCreativeCloudExpress.gif)
 
 3. Delete employee
 
-   ![delete_AdobeCreativeCloudExpress.gif](CRUD%20d64b6/delete_AdobeCreativeCloudExpress.gif)
+   ![delete_AdobeCreativeCloudExpress.gif](./delete_AdobeCreativeCloudExpress.gif)
