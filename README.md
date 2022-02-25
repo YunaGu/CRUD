@@ -4,6 +4,20 @@ This is a CRUD project about employee system.
 
 Github: [https://github.com/YunaGu/CRUD](https://github.com/YunaGu/CRUD)
 
+how to run:
+
+#### `cd client`
+
+#### `yarn start`
+
+then new another terminal:
+
+#### `..`
+
+#### `server`
+
+#### `node index.js`
+
 ### Technologies used
 
 - ReactJS
