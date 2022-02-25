@@ -6,17 +6,17 @@ Github: [https://github.com/YunaGu/CRUD](https://github.com/YunaGu/CRUD)
 
 how to run:
 
-#### `cd client`
+`cd client`
 
-#### `yarn start`
+`yarn start`
 
 then new another terminal:
 
-#### `..`
+`..`
 
-#### `server`
+`server`
 
-#### `node index.js`
+`node index.js`
 
 ### Technologies used
 
